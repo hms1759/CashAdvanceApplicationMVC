@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MyApplication.Models.MvcEmployee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HodIndex.cshtml";
+}
+
+        <h3>Employee List</h3>
+
+        
+        <table class="table">
+            <tr>
+                <th>
+                    <label>Name</label>
+                </th>
+                <th>
+
+                    <label>Phone</label>
+                </th>
+                <th>
+                    <label>Email</label>
+                </th>
+                <th>
+                    <label>Department</label>
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department)
+                    </td>
+                   
+                </tr>
+            }
+
+        </table>

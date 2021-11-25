@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MyApplication.Models.MMvcCashAdvance>
+
+@{
+    ViewBag.Title = "CashList";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<div class="container" style="background-color:; width:100% !important; height:100%;">
+    <div class="container" style=" display:flex; justify-content:space-around">
+        <div>
+
+            <h3 class="f" style="font-family:'Times New Roman', Times, serif; font-weight:600">CAsh Advance List</h3>
+
+            <table class="table-striped table-bordered table-condensed" style="text-align:center;">
+                <tr>
+                    <th>
+                        <label>Requested By</label>
+                    </th>
+                    <th>
+                        <label>Request Date</label>
+                    </th>
+                    <th>
+                        <label>Approved Date</label>
+                    </th>
+                    <th>
+                        <label>Request Status</label>
+                    </th>
+                    <th>
+                        <label>Amount</label>
+                    </th>
+                    <th>
+                        <label>Department</label>
+                    </th>
+
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.requestBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.requestDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.approvedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.requestStatus)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.department)
+                        </td>
+
+
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+            

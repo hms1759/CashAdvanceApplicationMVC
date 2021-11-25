@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MyApplication.Models.MMvcCashAdvance>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HodIndex.cshtml";
+}
+
+
+<div class="container" style="background-color:; width:100% !important; height:100%;">
+    <div class="container" style=" display:flex; justify-content:space-around">
+        <div>
+
+            <h3 class="f" style="font-family:'Times New Roman', Times, serif; font-weight:600">CAsh Advance List</h3>
+
+            <table class="table-striped table-bordered table-condensed" style="text-align:center;">
+                <tr class="">
+
+                    <th style="text-align:center">
+                        <label>Request Name</label>
+                    </th>
+                    <th style="text-align:center">
+                        <label>Request Date</label>
+                    </th>
+                    <th>
+                        <label>Request Status</label>
+                    </th>
+                    <th>
+                        <label>Request Amount</label>
+                    </th>
+                    <th>
+
+                        <label>Department</label>
+                    </th>
+                    <th> Approve</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.requestBy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.requestDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.requestStatus)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.department)
+                        </td>
+                        <td>
+                            <a href=" @Url.Action("AddorEdit", "CashADvance", new { id = item.Id }) " class="btn btn-primary">Approve</a>
+
+
+
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<link href="//cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css " rel="stylesheet" />
+@section scripts {
+    <script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js" defer></script>
+    <script>
+        function activatejQueryTable() {
+            $("#hhod").DataTable();
+
+        }
+        $(function () {
+            activatejQueryTable();
+        });
+    </script>
+}

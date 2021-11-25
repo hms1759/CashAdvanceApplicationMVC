@@ -1,0 +1,83 @@
+﻿@model MyApplication.Models.MMvcCashAdvance
+
+@{
+    ViewBag.Title = "Approved1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Approved1</h2>
+
+<div>
+    <h4>MMvcCashAdvance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.requestBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.requestBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.requestDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.requestDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.approvedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.approvedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.approvedBY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.approvedBY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.requestStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.requestStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.department)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

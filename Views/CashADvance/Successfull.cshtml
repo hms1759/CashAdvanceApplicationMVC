@@ -1,0 +1,48 @@
+﻿@model MyApplication.Models.MMvcCashAdvance
+
+@{
+    ViewBag.Title = "Successfull";
+    Layout = "~/Views/Shared/Login.cshtml";
+}
+
+
+
+
+<div class=" container">
+    <div class="jumbotron " style="width: 500px; height: 400px;justify-items:center!important;margin-left:300px; align-content:space-around !important; color: black">
+
+
+        @using (Html.BeginForm("AddorEditPost", "CashADvance", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h1 class="text-center" style=" color: green"><strong>Success!!!</strong></h1>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <p>
+                    Your Request For <strong><a class="" style="color:crimson"> @Html.DisplayFor(model => model.amount)</a></strong> has been successfuly submitted
+
+                </p>
+
+
+              
+
+            </div>
+        }
+
+    </div>
+
+</div>
+
+
+
+
+<div>
+    @Html.ActionLink("Back to Home", "Log", "Login")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
